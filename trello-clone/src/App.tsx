@@ -1,5 +1,20 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { Card } from './Card';
+import { Column } from './Column';
+import { AppContainer } from './styles';
 
-export const App=()=>{
-  return null;
+export const App:FC=()=>{
+  return (
+    <AppContainer>
+      <Column text='To Do'>
+        <Card text='Write a blog post' />
+      </Column>
+      <Column text='In Progress'>
+        <Card text='Learn Typescript' />
+      </Column>
+      <Column text='Done'>
+        <Card text='Learn React' />
+      </Column>
+    </AppContainer>
+  );
 }
