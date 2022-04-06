@@ -1,21 +1,16 @@
 import React, { FC } from 'react';
 import { AddNewItem } from './AddNewItem';
-import { Card } from './Card';
 import { Column } from './Column';
+import { useAppState } from './state/AppStateContext';
 import { AppContainer } from './styles';
 
 export const App:FC=()=>{
+  const { lists } = useAppState();
   return (
     <AppContainer>
-      <Column text='To Do'>
-        <Card text='Write a blog post' />
-      </Column>
-      <Column text='In Progress'>
-        <Card text='Learn Typescript' />
-      </Column>
-      <Column text='Done'>
-        <Card text='Learn React' />
-      </Column>
+      {lists.map((list)=>(
+        <Column key={list.id} id={list.id} text={list.text} />
+      ))}
       <AddNewItem toggleButtonText='+Add another list' onAdd={console.log}/>
     </AppContainer>
   );
