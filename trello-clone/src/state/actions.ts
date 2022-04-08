@@ -1,6 +1,7 @@
 export type Action = 
     | { type: 'ADD_LIST', payload: string } 
     | { type: 'ADD_TASK', payload: { listId: string, task: string } }
+    | { type: 'MOVE_LIST', payload: { draggedId:string, hoverId:string } }
 
 export const addTask = (listId: string, task: string): Action => ({
     type: 'ADD_TASK',
@@ -10,4 +11,9 @@ export const addTask = (listId: string, task: string): Action => ({
 export const addList = (list: string): Action => ({
     type: 'ADD_LIST',
     payload: list
+})
+
+export const moveList = (draggedId: string, hoverId: string): Action => ({
+    type: 'MOVE_LIST',
+    payload: { draggedId, hoverId }
 })
