@@ -3,6 +3,16 @@ import styled from 'styled-components';
 type AddItemButtonProps = {
     dark?: boolean;
 };
+interface DragPreviweContainerProps {
+    isHidden?: boolean;
+    isPreview?: boolean;
+}
+
+export const DragPreviweContainer = styled.div<DragPreviweContainerProps>`
+    opacity: ${(props) => (props.isHidden ? 0.3 : 1)};
+    transform: ${(props) => (props.isPreview ? 'rotate(5deg)' : undefined)};
+}
+`;
 
 export const AddItemButton = styled.button<AddItemButtonProps>`
     background-color: #ffffff3d;
@@ -57,7 +67,7 @@ export const AppContainer = styled.div`
     width: 100%;
 `;
 
-export const ColumnContainer = styled.div`
+export const ColumnContainer = styled(DragPreviweContainer)`
     background-color: #ebecf0;
     width: 300px;
     min-height: 40px;
@@ -72,7 +82,7 @@ export const ColumnTitle = styled.div`
     font-weight: bold;
 `;
 
-export const CardContainer = styled.div`
+export const CardContainer = styled(DragPreviweContainer)`
     background-color: #fff;
     cursor: pointer;
     margin-bottom: 0.5rem;
