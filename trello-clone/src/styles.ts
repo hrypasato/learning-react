@@ -3,12 +3,27 @@ import styled from 'styled-components';
 type AddItemButtonProps = {
     dark?: boolean;
 };
-interface DragPreviweContainerProps {
+
+type DragPreviewWrapperProps = {
+    position:{
+        x: number;
+        y: number;
+    }
+};
+
+interface DragPreviewContainerProps {
     isHidden?: boolean;
     isPreview?: boolean;
 }
 
-export const DragPreviweContainer = styled.div<DragPreviweContainerProps>`
+export const DragPreviewWrapper = styled.div.attrs<DragPreviewWrapperProps>(
+    ({ position: { x, y } }) => ({
+        style: {
+            transform: `translate(${x}px, ${y}px)`
+     }})
+)<DragPreviewWrapperProps>``;
+
+export const DragPreviweContainer = styled.div<DragPreviewContainerProps>`
     opacity: ${(props) => (props.isHidden ? 0.3 : 1)};
     transform: ${(props) => (props.isPreview ? 'rotate(5deg)' : undefined)};
 }
