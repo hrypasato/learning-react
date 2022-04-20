@@ -23,9 +23,9 @@ export const DragPreviewWrapper = styled.div.attrs<DragPreviewWrapperProps>(
      }})
 )<DragPreviewWrapperProps>``;
 
-export const DragPreviweContainer = styled.div<DragPreviewContainerProps>`
-    opacity: ${(props) => (props.isHidden ? 0.3 : 1)};
+export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
     transform: ${(props) => (props.isPreview ? 'rotate(5deg)' : undefined)};
+    opacity: ${(props) => (props.isHidden ? 0.3 : 1)};
 }
 `;
 
@@ -92,7 +92,7 @@ export const AppContainer = styled.div`
     width: 100%;
 `;
 
-export const ColumnContainer = styled(DragPreviweContainer)`
+export const ColumnContainer = styled(DragPreviewContainer)`
     background-color: #ebecf0;
     width: 300px;
     min-height: 40px;
@@ -107,7 +107,7 @@ export const ColumnTitle = styled.div`
     font-weight: bold;
 `;
 
-export const CardContainer = styled(DragPreviweContainer)`
+export const CardContainer = styled(DragPreviewContainer)`
     background-color: #fff;
     cursor: pointer;
     margin-bottom: 0.5rem;
