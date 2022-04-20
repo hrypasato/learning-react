@@ -14,6 +14,16 @@ export const DragPreviweContainer = styled.div<DragPreviweContainerProps>`
 }
 `;
 
+export const CustomDragLayerContainer = styled.div`
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+`;
+
 export const AddItemButton = styled.button<AddItemButtonProps>`
     background-color: #ffffff3d;
     border-radius: 3px;
