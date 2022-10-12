@@ -1,11 +1,10 @@
+import { AuthProvider } from "./auth";
 import { AppRouter } from "./router";
-import { Navbar } from "./ui";
 
 export const HeroesApp = () => {
     return (
-        <>
-            <Navbar/>
+        <AuthProvider>
             <AppRouter/>
-        </>
+        </AuthProvider>
     );
 }
