@@ -54,6 +54,10 @@ const refreshToken = async (req = request, res = response) => {
     res.json({
         ok:true,
         token,
+        user:{
+            uid,
+            name,
+        }
     });
 };
 
