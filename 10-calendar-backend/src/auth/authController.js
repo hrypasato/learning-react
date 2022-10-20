@@ -17,7 +17,7 @@ const createUser = async (req = request, res = response) => {
     res.status(201).json({
         ok:true,
         token,
-        data:{
+        user:{
             uid: newUser.id,
             name: newUser.name,
             email: newUser.email,
@@ -39,7 +39,7 @@ const loginUser = async (req = request, res = response) => {
     res.json({
         ok:true,
         token,
-        data: {
+        user: {
             uid:user.id,
             name:user.name,
         }

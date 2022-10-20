@@ -7,7 +7,7 @@ const getEvents = async (req = request, res = response) => {
     const events = await getAllEvents();
     res.json({
         ok:true,
-        data:events,
+        events,
     })
 }
 
@@ -19,7 +19,7 @@ const createEvent = async (req = request, res = response) => {
 
     res.json({
         ok:true,
-        data:newEvent,
+        event:newEvent,
     })
 }
 
@@ -42,7 +42,7 @@ const updateEvent = async (req = request, res = response) => {
 
     res.json({
         ok:true,
-        data:eventUpdated,
+        event:eventUpdated,
     })
 }
 
