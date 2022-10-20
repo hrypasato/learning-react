@@ -5,6 +5,7 @@ require('dotenv').config();
 const { dbConnection } = require('./database/config');
 
 const authRouter = require('./auth/authRouter');
+const eventRouter = require('./events/eventRouter');
 const { handleError } = require('./midlewares/errorHandler');
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.use("/api/auth", authRouter);
+app.use("/api/events", eventRouter);
 
 app.use(handleError);
 

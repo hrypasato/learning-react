@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const { check } = require('express-validator');
+
 const authController = require('./authController');
 const { validator } = require('../midlewares/fieldsValidator');
 const { validarJWT } = require("../midlewares/jwtValidator");
@@ -7,7 +8,7 @@ const { validarJWT } = require("../midlewares/jwtValidator");
 const router = Router();
 
  /**
-  * hostmane/api/auth
+  * hostname/api/auth
   */
 
 router.post("/",
