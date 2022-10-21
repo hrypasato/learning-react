@@ -6,11 +6,7 @@ const emptyEvent = {
     notes: '',
     start: new Date(),
     end: addHours(new Date(), 2),
-    bgColor:'#fafafa',
-    user:{
-        _id: '123',
-        name:'Miguel',
-    },
+    user:{ },
 }
 
 export const FabAddNew = () => {
